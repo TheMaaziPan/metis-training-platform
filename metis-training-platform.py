@@ -1,4 +1,639 @@
-with col1:
+def marketing_materials_page():
+    st.markdown('<h1 class="main-header">Marketing Materials</h1>', unsafe_allow_html=True)
+    st.markdown('<p class="sub-header">Access co-branded marketing resources</p>', unsafe_allow_html=True)
+    
+    st.markdown('<div class="metis-card">', unsafe_allow_html=True)
+    st.markdown("### Available Marketing Resources")
+    
+    # Categories for materials
+    tabs = st.tabs(["Presentations", "Case Studies", "Logos & Brand Assets", "Product Sheets"])
+    
+    with tabs[0]:
+        st.markdown("#### Presentation Templates")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("""
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                <h4>Metis Overview Presentation</h4>
+                <p>A comprehensive introduction to Metis for potential clients.</p>
+                <p style="color: #666;">Last updated: March 15, 2025</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PowerPoint</button>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            st.markdown("""
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                <h4>Partner Success Stories</h4>
+                <p>Showcase of successful partner implementations and results.</p>
+                <p style="color: #666;">Last updated: April 10, 2025</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PowerPoint</button>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with col2:
+            st.markdown("""
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                <h4>Technical Integration Presentation</h4>
+                <p>Detailed slides on API integration and technical requirements.</p>
+                <p style="color: #666;">Last updated: April 22, 2025</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PowerPoint</button>
+            </div>
+            
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                <h4>ROI Case Builder</h4>
+                <p>Presentation template for building custom ROI cases.</p>
+                <p style="color: #666;">Last updated: March 28, 2025</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PowerPoint</button>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        st.markdown("### Custom Branding")
+        st.markdown("Upload your logo to create co-branded presentations.")
+        
+        col1, col2 = st.columns([1, 3])
+        with col1:
+            st.file_uploader("Upload your logo", type=["png", "jpg", "jpeg"])
+        with col2:
+            st.button("Generate Co-Branded Materials", key="gen_brand_materials")
+    
+    with tabs[1]:
+        st.markdown("#### Case Studies")
+        
+        st.markdown("""
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; width: 45%;">
+                <h4>New Look Success Story</h4>
+                <p>How New Look increased organic visibility by 400% with Metis</p>
+                <p style="color: #666;">Industry: Fashion Retail | ROI: 342%</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PDF</button>
+            </div>
+            
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; width: 45%;">
+                <h4>Farfetch Implementation Case Study</h4>
+                <p>Farfetch's journey to optimized product visibility</p>
+                <p style="color: #666;">Industry: Luxury Fashion | ROI: 287%</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PDF</button>
+            </div>
+            
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; width: 45%;">
+                <h4>Abbott Lyon Revenue Growth</h4>
+                <p>How Abbott Lyon achieved ambitious growth targets with Metis</p>
+                <p style="color: #666;">Industry: Jewelry | ROI: 215%</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PDF</button>
+            </div>
+            
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; width: 45%;">
+                <h4>Moss Bros SEO Transformation</h4>
+                <p>Moss Bros Group's strategy for transforming organic performance</p>
+                <p style="color: #666;">Industry: Men's Fashion | ROI: 198%</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PDF</button>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with tabs[2]:
+        st.markdown("#### Logos & Brand Assets")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("##### Metis Logos")
+            st.markdown("""
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center;">
+                    <img src="https://via.placeholder.com/150x80?text=Metis+Logo" alt="Metis Logo">
+                    <p style="margin: 5px 0;">Primary Logo</p>
+                    <button style="background-color: #7B68EE; color: white; border: none; padding: 3px 8px; border-radius: 5px; font-size: 12px; cursor: pointer;">PNG</button>
+                    <button style="background-color: #7B68EE; color: white; border: none; padding: 3px 8px; border-radius: 5px; font-size: 12px; cursor: pointer;">SVG</button>
+                </div>
+                
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center;">
+                    <img src="https://via.placeholder.com/150x80?text=Metis+Icon" alt="Metis Icon">
+                    <p style="margin: 5px 0;">Icon Only</p>
+                    <button style="background-color: #7B68EE; color: white; border: none; padding: 3px 8px; border-radius: 5px; font-size: 12px; cursor: pointer;">PNG</button>
+                    <button style="background-color: #7B68EE; color: white; border: none; padding: 3px 8px; border-radius: 5px; font-size: 12px; cursor: pointer;">SVG</button>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            st.markdown("##### Partner Badges")
+            st.markdown("""
+            <div style="display: flex; gap: 10px;">
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center;">
+                    <img src="https://via.placeholder.com/150x80?text=Certified+Partner" alt="Certified Partner Badge">
+                    <p style="margin: 5px 0;">Certified Partner</p>
+                    <button style="background-color: #7B68EE; color: white; border: none; padding: 3px 8px; border-radius: 5px; font-size: 12px; cursor: pointer;">PNG</button>
+                    <button style="background-color: #7B68EE; color: white; border: none; padding: 3px 8px; border-radius: 5px; font-size: 12px; cursor: pointer;">SVG</button>
+                </div>
+                
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center;">
+                    <img src="https://via.placeholder.com/150x80?text=Gold+Partner" alt="Gold Partner Badge">
+                    <p style="margin: 5px 0;">Gold Partner</p>
+                    <button style="background-color: #7B68EE; color: white; border: none; padding: 3px 8px; border-radius: 5px; font-size: 12px; cursor: pointer;">PNG</button>
+                    <button style="background-color: #7B68EE; color: white; border: none; padding: 3px 8px; border-radius: 5px; font-size: 12px; cursor: pointer;">SVG</button>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with col2:
+            st.markdown("##### Brand Guidelines")
+            st.markdown("""
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                <h5>Metis Brand Guidelines</h5>
+                <p>Complete guide to using Metis brand assets correctly.</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PDF</button>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            st.markdown("##### Color Palette")
+            st.markdown("""
+            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                <div style="background-color: #7B68EE; width: 50px; height: 50px; border-radius: 5px;"></div>
+                <div style="background-color: #1E1640; width: 50px; height: 50px; border-radius: 5px;"></div>
+                <div style="background-color: #F8F9FA; width: 50px; height: 50px; border-radius: 5px; border: 1px solid #ddd;"></div>
+                <div style="background-color: #2B2D42; width: 50px; height: 50px; border-radius: 5px;"></div>
+                <div style="background-color: #6C757D; width: 50px; height: 50px; border-radius: 5px;"></div>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <p style="margin: 0;">Primary: #7B68EE | Secondary: #1E1640 | Background: #F8F9FA</p>
+                <p style="margin: 0;">Text: #2B2D42 | Light Text: #6C757D</p>
+            </div>
+            
+            <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Download Color Assets</button>
+            """, unsafe_allow_html=True)
+    
+    with tabs[3]:
+        st.markdown("#### Product Sheets")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("""
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                <h4>Metis Platform Overview</h4>
+                <p>Complete platform capabilities and features.</p>
+                <p style="color: #666;">Last updated: April 15, 2025</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PDF</button>
+            </div>
+            
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                <h4>Category Monitoring Module</h4>
+                <p>Detailed information on the Category Monitoring tools.</p>
+                <p style="color: #666;">Last updated: March 22, 2025</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PDF</button>
+            </div>
+        """, unsafe_allow_html=True)
+        
+        with col2:
+            st.markdown("""
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                <h4>Product Visibility Module</h4>
+                <p>Detailed information on Product Visibility capabilities.</p>
+                <p style="color: #666;">Last updated: April 5, 2025</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PDF</button>
+            </div>
+            
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                <h4>Metis API Integration Guide</h4>
+                <p>Technical details for integrating with the Metis API.</p>
+                <p style="color: #666;">Last updated: April 18, 2025</p>
+                <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Download PDF</button>
+            </div>
+            """, unsafe_allow_html=True)
+    
+    st.markdown('</div>', unsafe_allow_html=True)
+
+def faqs_page():
+    st.markdown('<h1 class="main-header">FAQs & Troubleshooting</h1>', unsafe_allow_html=True)
+    st.markdown('<p class="sub-header">Find answers to common questions and issues</p>', unsafe_allow_html=True)
+    
+    st.markdown('<div class="metis-card">', unsafe_allow_html=True)
+    
+    # Search box
+    st.text_input("Search FAQs", placeholder="Type your question here...")
+    
+    # FAQ categories
+    tab1, tab2, tab3, tab4 = st.tabs(["General", "Technical", "Account & Billing", "Optimization"])
+    
+    with tab1:
+        st.markdown("### General Questions")
+        
+        # FAQ accordion
+        with st.expander("What is Metis and how does it work?"):
+            st.markdown("""
+            Metis is an e-commerce optimization platform that helps you understand what people want and when they want it. It makes tailored daily recommendations based on market data and your website to inform business decisions 4x faster than your competitors.
+            
+            The platform provides a central source of insight into weekly organic demand data and pulls this data into tailored daily recommendations to improve business performance.
+            """)
+        
+        with st.expander("Who can benefit from using Metis?"):
+            st.markdown("""
+            Metis adds value across the organization:
+            
+            - **Buyers**: Inform product buying, range building, new product development
+            - **Merchandisers**: Inform sales planning decisions, delivery timetables, trading windows
+            - **Trading Teams**: Support daily site trading, category creation, page creation
+            - **Digital and Marketing Teams**: Deliver sitewide recommendations for quick wins
+            - **C-Suite**: Access to unique data to support investment decisions
+            """)
+        
+        with st.expander("How long does it take to implement Metis?"):
+            st.markdown("""
+            The typical implementation timeline for Metis is 2-4 weeks, depending on the complexity of your e-commerce platform and the specific modules you're implementing. Our implementation team will work with you to create a tailored onboarding plan.
+            """)
+        
+        with st.expander("What makes Metis different from other analytics tools?"):
+            st.markdown("""
+            Metis differs from standard analytics tools in several key ways:
+            
+            1. It focuses specifically on e-commerce optimization rather than general website analytics
+            2. It provides actionable recommendations, not just data
+            3. It combines market demand data with your website performance
+            4. It updates daily with fresh insights rather than static reports
+            5. It's designed for cross-functional use across your organization
+            """)
+    
+    with tab2:
+        st.markdown("### Technical Questions")
+        
+        with st.expander("What technical requirements are needed to use Metis?"):
+            st.markdown("""
+            Metis is a cloud-based platform that requires minimal technical setup. The basic requirements are:
+            
+            - Access to your Google Analytics account
+            - Access to your e-commerce platform's admin area
+            - Implementation of a small tracking script on your website
+            
+            No server-side installation is required, and our team handles most of the setup process.
+            """)
+        
+        with st.expander("Can Metis integrate with my e-commerce platform?"):
+            st.markdown("""
+            Yes, Metis can integrate with all major e-commerce platforms including:
+            
+            - Shopify
+            - Magento
+            - WooCommerce
+            - BigCommerce
+            - Custom platforms
+            
+            We have pre-built integrations for major platforms and can develop custom integrations for proprietary systems.
+            """)
+        
+        with st.expander("How secure is my data with Metis?"):
+            st.markdown("""
+            Data security is a top priority at Metis. We implement multiple layers of protection:
+            
+            - All data is encrypted in transit and at rest
+            - We are GDPR compliant and SOC 2 certified
+            - Regular security audits and penetration testing
+            - No personally identifiable information (PII) is collected
+            - Role-based access controls for your team members
+            """)
+        
+        with st.expander("Can I access Metis data via API?"):
+            st.markdown("""
+            Yes, Metis offers a comprehensive API that allows you to:
+            
+            - Retrieve analytics data
+            - Access recommendations
+            - Integrate Metis insights into your dashboards
+            - Automate reporting
+            
+            API documentation is available in the partner portal, and our support team can help you with integration.
+            """)
+    
+    with tab3:
+        st.markdown("### Account & Billing Questions")
+        
+        with st.expander("How is Metis priced?"):
+            st.markdown("""
+            Metis is available in several pricing tiers based on your e-commerce volume and the specific modules you need. Our pricing is subscription-based with monthly or annual billing options.
+            
+            For detailed pricing information, please contact your account manager or sales representative.
+            """)
+        
+        with st.expander("Can I change my subscription plan?"):
+            st.markdown("""
+            Yes, you can upgrade or downgrade your subscription plan at any time. Upgrades take effect immediately, while downgrades will be applied at the end of your current billing cycle.
+            
+            To change your plan, contact your account manager or submit a request through the support portal.
+            """)
+        
+        with st.expander("How do I add more users to my account?"):
+            st.markdown("""
+            You can add additional users to your Metis account from the Admin section:
+            
+            1. Navigate to Settings > User Management
+            2. Click "Add User"
+            3. Enter the user's information and select their role
+            4. An invitation will be sent to the user's email
+            
+            Additional user licenses may affect your subscription cost, depending on your plan.
+            """)
+        
+        with st.expander("What support options are available?"):
+            st.markdown("""
+            All Metis subscriptions include standard support:
+            
+            - Email support (24-hour response time)
+            - Access to the knowledge base and documentation
+            - Monthly check-in calls
+            
+            Premium and Enterprise plans include additional support options:
+            
+            - Dedicated account manager
+            - Phone support
+            - Priority response times
+            - Custom training sessions
+            """)
+    
+    with tab4:
+        st.markdown("### Optimization Questions")
+        
+        with st.expander("How often is Metis data updated?"):
+            st.markdown("""
+            Metis updates data on different schedules depending on the module:
+            
+            - Market demand data: Weekly
+            - Category and product performance: Daily
+            - Recommendations: Daily
+            - Competitor analysis: Weekly
+            
+            All recommendations and insights are refreshed daily to ensure you have the most current information.
+            """)
+        
+        with st.expander("How do I implement Metis recommendations?"):
+            st.markdown("""
+            Implementing Metis recommendations depends on the specific recommendation type:
+            
+            - Category structure changes: Update your site navigation and category pages
+            - Product visibility: Adjust product positions within category pages
+            - Content optimization: Update meta titles, descriptions, and category content
+            - Merchandising: Adjust product promotions and featured items
+            
+            Most recommendations include step-by-step implementation instructions, and our support team can provide guidance as needed.
+            """)
+        
+        with st.expander("How do I measure the impact of Metis?"):
+            st.markdown("""
+            Metis provides several ways to measure the impact of your optimizations:
+            
+            - Before/after performance comparisons
+            - ROI calculations for specific recommendations
+            - Traffic and revenue attribution
+            - Competitive benchmark tracking
+            
+            The Analytics section of the platform includes dedicated reports for measuring the impact of implemented recommendations.
+            """)
+        
+        with st.expander("Can Metis help with international markets?"):
+            st.markdown("""
+            Yes, Metis supports international optimization across multiple markets and languages. The platform can:
+            
+            - Analyze market-specific demand trends
+            - Provide localized recommendations
+            - Support multiple currencies and languages
+            - Compare performance across different regions
+            
+            International optimization is available on Premium and Enterprise plans.
+            """)
+    
+    # Still need help section
+    st.markdown("### Still Need Help?")
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown("""
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; height: 150px;">
+            <h4>Contact Support</h4>
+            <p>Reach out to our support team for personalized assistance.</p>
+            <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Submit Ticket</button>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; height: 150px;">
+            <h4>Schedule a Call</h4>
+            <p>Book a call with your account manager for guidance.</p>
+            <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Book Appointment</button>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        st.markdown("""
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; height: 150px;">
+            <h4>Knowledge Base</h4>
+            <p>Explore detailed guides and tutorials in our knowledge base.</p>
+            <button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">View Resources</button>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown('</div>', unsafe_allow_html=True)
+
+def roi_calculator_page():
+    st.markdown('<h1 class="main-header">ROI Calculator</h1>', unsafe_allow_html=True)
+    st.markdown('<p class="sub-header">Calculate your potential return on investment with Metis</p>', unsafe_allow_html=True)
+    
+    st.markdown('<div class="metis-card">', unsafe_allow_html=True)
+    
+    # Business information
+    st.markdown("### Business Information")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.selectbox("Industry", ["Fashion & Apparel", "Jewelry & Accessories", "Home & Garden", "Electronics", "Beauty & Cosmetics", "Sports & Outdoors", "Toys & Games", "Food & Beverage", "Other"])
+    
+    with col2:
+        st.selectbox("E-commerce Platform", ["Shopify", "Magento", "WooCommerce", "BigCommerce", "Custom Platform", "Other"])
+    
+    # Current performance metrics
+    st.markdown("### Current Performance")
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        monthly_traffic = st.number_input("Monthly Website Traffic", min_value=0, value=100000)
+    
+    with col2:
+        conversion_rate = st.number_input("Conversion Rate (%)", min_value=0.0, max_value=100.0, value=2.0, step=0.1)
+    
+    with col3:
+        average_order_value = st.number_input("Average Order Value ($)", min_value=0, value=75)
+    
+    # Advanced metrics (optional)
+    with st.expander("Advanced Metrics (Optional)"):
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            organic_traffic_percentage = st.slider("Organic Traffic Percentage", 0, 100, 40)
+            current_seo_spend = st.number_input("Monthly SEO Spend ($)", min_value=0, value=5000)
+        
+        with col2:
+            product_count = st.number_input("Total Product Count", min_value=0, value=5000)
+            category_count = st.number_input("Total Category Count", min_value=0, value=50)
+    
+    # Business goals
+    st.markdown("### Business Goals")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        primary_goal = st.selectbox("Primary Goal", [
+            "Increase organic traffic",
+            "Improve conversion rates",
+            "Optimize product visibility",
+            "Enhance category structure",
+            "Reduce PPC dependency",
+            "Improve overall revenue"
+        ])
+    
+    with col2:
+        timeline = st.selectbox("Implementation Timeline", [
+            "0-3 months",
+            "3-6 months",
+            "6-12 months",
+            "12+ months"
+        ])
+    
+    # Calculate button
+    if st.button("Calculate ROI", key="calculate_roi"):
+        # Calculating current metrics
+        monthly_orders = monthly_traffic * (conversion_rate / 100)
+        monthly_revenue = monthly_orders * average_order_value
+        annual_revenue = monthly_revenue * 12
+        
+        # Estimated improvements with Metis (example values)
+        traffic_increase = 0.25  # 25% increase in traffic
+        conversion_increase = 0.15  # 15% increase in conversion rate
+        
+        # Calculate new metrics
+        new_monthly_traffic = monthly_traffic * (1 + traffic_increase)
+        new_conversion_rate = conversion_rate * (1 + conversion_increase)
+        new_monthly_orders = new_monthly_traffic * (new_conversion_rate / 100)
+        new_monthly_revenue = new_monthly_orders * average_order_value
+        new_annual_revenue = new_monthly_revenue * 12
+        
+        # Calculate ROI
+        revenue_increase = new_annual_revenue - annual_revenue
+        estimated_cost = 25000  # Example annual cost of Metis
+        roi_percentage = (revenue_increase - estimated_cost) / estimated_cost * 100
+        
+        # Display results
+        st.markdown("### Your Estimated Results")
+        
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            st.markdown("""
+            <div style="background-color: #f0f0f0; padding: 15px; border-radius: 8px; text-align: center;">
+                <h4>Annual Revenue Increase</h4>
+                <p style="font-size: 24px; font-weight: bold; color: #7B68EE;">${}M</p>
+            </div>
+            """.format(round(revenue_increase / 1000000, 2)), unsafe_allow_html=True)
+        
+        with col2:
+            st.markdown("""
+            <div style="background-color: #f0f0f0; padding: 15px; border-radius: 8px; text-align: center;">
+                <h4>ROI</h4>
+                <p style="font-size: 24px; font-weight: bold; color: #7B68EE;">{}%</p>
+            </div>
+            """.format(round(roi_percentage)), unsafe_allow_html=True)
+        
+        with col3:
+            st.markdown("""
+            <div style="background-color: #f0f0f0; padding: 15px; border-radius: 8px; text-align: center;">
+                <h4>Payback Period</h4>
+                <p style="font-size: 24px; font-weight: bold; color: #7B68EE;">{} months</p>
+            </div>
+            """.format(round(12 * estimated_cost / revenue_increase)), unsafe_allow_html=True)
+        
+        # Detailed breakdown
+        st.markdown("### Detailed Breakdown")
+        
+        st.markdown("""
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Current</th>
+                    <th>Projected</th>
+                    <th>Improvement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monthly Traffic</td>
+                    <td>{:,}</td>
+                    <td>{:,}</td>
+                    <td>+{:.1f}%</td>
+                </tr>
+                <tr>
+                    <td>Conversion Rate</td>
+                    <td>{:.2f}%</td>
+                    <td>{:.2f}%</td>
+                    <td>+{:.1f}%</td>
+                </tr>
+                <tr>
+                    <td>Monthly Orders</td>
+                    <td>{:,}</td>
+                    <td>{:,}</td>
+                    <td>+{:.1f}%</td>
+                </tr>
+                <tr>
+                    <td>Monthly Revenue</td>
+                    <td>${:,}</td>
+                    <td>${:,}</td>
+                    <td>+{:.1f}%</td>
+                </tr>
+                <tr>
+                    <td>Annual Revenue</td>
+                    <td>${:,}</td>
+                    <td>${:,}</td>
+                    <td>+{:.1f}%</td>
+                </tr>
+            </tbody>
+        </table>
+        """.format(
+            monthly_traffic, new_monthly_traffic, traffic_increase * 100,
+            conversion_rate, new_conversion_rate, conversion_increase * 100,
+            int(monthly_orders), int(new_monthly_orders), (new_monthly_orders / monthly_orders - 1) * 100,
+            int(monthly_revenue), int(new_monthly_revenue), (new_monthly_revenue / monthly_revenue - 1) * 100,
+            int(annual_revenue), int(new_annual_revenue), (new_annual_revenue / annual_revenue - 1) * 100
+        ), unsafe_allow_html=True)
+        
+        # ROI chart placeholder (in a real implementation, this would be a chart)
+        st.markdown("### ROI Timeline")
+        st.markdown("```python\n# This would be a line chart showing ROI over time\n```")
+        
+        # Next steps
+        st.markdown("### Recommended Next Steps")
+        st.markdown("""
+        Based on your input, we recommend:
+        
+        1. **Schedule a personalized demo** to see how Metis can address your specific needs
+        2. **Request a custom ROI analysis** from our team with more detailed projections
+        3. **Begin a pilot implementation** to validate these projections in your environment
+        """)
+        
+        # Call-to-action buttons
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            st.button("Schedule Demo", key="schedule_demo")
+        
+        with col2:
+            st.button("Request Custom Analysis", key="request_analysis")
+        
+        with col3:
+            st.button("Start Pilot Program", key="start_pilot")
+    
+    st.markdown('</div>', unsafe_allow_html=True)        with col1:
             st.markdown("""
             <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
                 <h4>Metis Overview Presentation</h4>
@@ -1853,7 +2488,7 @@ def course_catalog():
     
     st.markdown('</div>', unsafe_allow_html=True)
 
-# Helper function to create a grid of course cards
+# Create two columns for the courses
 def create_course_grid(courses):
     if not courses:
         st.info("No courses available in this category yet.")
