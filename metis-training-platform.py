@@ -1503,6 +1503,50 @@ def certifications_page():
         certifications = [
             {"title": "Metis Fundamentals", "status": "Completed", "date": "April 10, 2025", "badge": "🏆"},
             {"title": "Metis Integration Partner", "status": "In Progress (1/4)", "date": "-", "badge": "🔌"},
+            {"title": "Metis Solutions Architect", "status": "Not Started", "date": "-", "badge": "🏗️"}
+        ]
+    
+    elif st.session_state.user_type == "customer":
+        st.markdown("### Customer Certifications")
+        certifications = [
+            {"title": "Metis Fundamentals", "status": "In Progress (2/3)", "date": "-", "badge": "🏆"},
+            {"title": "Metis Platform Expert", "status": "Not Started", "date": "-", "badge": "👑"},
+            {"title": "Metis Optimization Specialist", "status": "Not Started", "date": "-", "badge": "📈"}
+        ]
+    
+    # Display certifications
+    st.markdown("""
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Certification</th>
+                <th>Status</th>
+                <th>Completion Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+    """, unsafe_allow_html=True)
+    
+    for cert in certifications:
+        button_text = "View" if cert["status"].startswith("Completed") else "Continue" if cert["status"].startswith("In Progress") else "Start"
+        button_disabled = "disabled" if cert["status"] == "Not Started" else ""
+        
+        st.markdown(f"""
+        <tr>
+            <td style="font-size: 24px;">{cert["badge"]}</td>
+            <td><strong>{cert["title"]}</strong></td>
+            <td>{cert["status"]}</td>
+            <td>{cert["date"]}</td>
+            <td><button style="background-color: #7B68EE; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;" {button_disabled}>{button_text}</button></td>
+        </tr>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("""
+        </tbody>
+    </table>
+    """, unsafe_allow_html=True)
 # Settings page
 def settings_page():
     st.markdown('<h1 class="main-header">Account Settings</h1>', unsafe_allow_html=True)
